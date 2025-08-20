@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+/* Custom CSS Variables for Discord Theme */
+@theme {
+  --color-discord-dark: #202225;
+  --color-discord-darker: #2f3136;
+  --color-discord-light: #36393f;
+  --color-discord-lighter: #40444b;
+  --color-discord-text: #dcddde;
+  --color-discord-muted: #72767d;
+  --color-discord-accent: #5865f2;
+  --color-discord-green: #3ba55d;
+  --color-discord-red: #ed4245;
+  --color-discord-yellow: #faa61a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-discord-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-discord-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-discord-muted);
+}
+
+/* Global styles */
+html,
+body {
+  height: 100%;
+  background-color: var(--color-discord-light);
+  color: var(--color-discord-text);
+}
+
+/* Custom utility classes */
+.discord-hover {
+  transition: background-color 0.2s;
+}
+
+.discord-hover:hover {
+  background-color: var(--color-discord-lighter);
+}
