@@ -18,6 +18,12 @@ import { Message, MessageSchema } from '../database/schemas/message.schema';
 import { Task, TaskSchema } from '../database/schemas/task.schema';
 import { Agent, AgentSchema } from '../database/schemas/agent.schema';
 import { Channel, ChannelSchema } from '../database/schemas/channel.schema';
+import { AgentInitializationService } from './agent-initialization.service';
+import { TaskExecutionService } from './task-execution.service';
+import { PrReviewService } from './pr-review.service';
+import { GitHubActivityService } from './github-activity.service';
+import { ChatHandlerService } from './chat-handler.service';
+
 
 @Module({
   imports: [
@@ -41,6 +47,11 @@ import { Channel, ChannelSchema } from '../database/schemas/channel.schema';
     UserCollaborationService,
     AgentWorkService,
     RealAgentCommunicationService, // ADD THIS
+    AgentInitializationService,
+    TaskExecutionService,
+    PrReviewService,
+    GitHubActivityService,
+    ChatHandlerService,
   ],
   exports: [
     AgentsService,

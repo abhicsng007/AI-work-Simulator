@@ -1,9 +1,11 @@
 import { Controller, Get, Post, Body, Param, Delete, Logger ,Headers } from '@nestjs/common';
 import { AgentsService } from './agents.service';
 import { DeveloperService } from './developer/developer.service';
-import { AgentWorkService, AgentWork } from './agent-work.service';
+import { AgentWorkService} from './agent-work.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UsersService } from '../users/users.service';
+import { AgentWork } from './agent-work.interface';
+import { ChatHandlerService } from './chat-handler.service';
 
 @Controller('agents')
 export class AgentsController {
@@ -14,6 +16,7 @@ export class AgentsController {
   private developerService: DeveloperService,
   private agentWorkService: AgentWorkService,
   private usersService: UsersService, // ADD THIS
+  private chatHandlerService: ChatHandlerService,
 ) {}
 
 
@@ -643,7 +646,7 @@ async askAgent(
     }
 
     // Send question to agent
-    await this.agentWorkService.askAgent(
+    await this.chatHandlerService.askAgent(
       user.id,
       user.name || user.email,
       agentId,
