@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Param, Headers, Patch, Inject } from '@nestjs/common';
-import { ProjectCreatorService, ProjectAnswer, GeneratedProject, GeneratedTask } from './project-creator.service';
+import { ProjectAnswer, GeneratedProject, GeneratedTask } from './project.interface';
 import { UsersService } from '../users/users.service';
+import { ProjectCreatorService } from './project-creator.service';
 
 @Controller('projects')
 export class ProjectsController {
